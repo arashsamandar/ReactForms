@@ -1,6 +1,5 @@
 import React,{Component} from "react";
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
-import Input from "./input";
 import Joi from 'joi-browser';
 import Form from "../common/form";
 
@@ -29,26 +28,12 @@ class LoginForm extends Form {
     this.setState({ data: data, errors });
   };
   render() {
-    const { data } = this.state;
+
     return (
       <form onSubmit={this.handleSubmit} className="container">
-        <Input
-          label="Username"
-          name="username"
-          value={data.username}
-          onChange={this.handleChange}
-          error={this.state.errors.username}
-        />
-        <Input
-          label="Password"
-          name="password"
-          value={data.password}
-          onChange={this.handleChange}
-          error={this.state.errors.password}
-        />
-        <button disabled={this.validate()} className="btn btn-primary m-3">
-          Login
-        </button>
+        {this.renderInput('username','Username')}
+        {this.renderInput('password','Password','password')}
+        {this.renderButton('Login')}
       </form>
     );
   }

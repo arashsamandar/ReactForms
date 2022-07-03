@@ -1,30 +1,12 @@
 /*
-so we had our methods , we extracted them , that was very easy and cozy , it made our COmponent
-much much .... simpler .
-then we extended it .
-like class InputForm extends Form {
-
-}
+Ok , as you saw when we had type={type} id={id} and as such repeated pattern ,
+we decided to use ...ref
  */
 
-// so we had an onChange method like bellow :
-state = {
-    account:{username:'',password:''},
-    errors:{}
-}
-handleChange = ({currentTarget:input}) => {
-    const account = {...this.state.account};
-    const errors = {};
-    const errorMessage = this.validateProperty(input);
-    if(errorMessage) {
-        errors[input.name] = errorMessage;
-    } else {
-        delete errors[input.name];
-    }
-    account[input.name] = input.value;
-    this.setState({account,errors});
-}
+import Input from "./input";
 
-validateProperty = ({name,value}) => {
-
+const MyFunc = ({name,...ref}) => {
+    <Input
+        {ref}
+        />
 }

@@ -16,7 +16,12 @@ class Products extends Component {
     render() {
         return (
             <div>
-                {this.state.products.map(product => (<li key={product.id}><Link to={`/products/${product.id}`}>{product.name}</Link></li>))}
+                {this.state.products.map(product => (
+                    <li key={product.id}>
+                        <Link to={`/products/${product.id}`}>
+                            {product.name}
+                        </Link>
+                    </li>))}
             </div>
         )
     }

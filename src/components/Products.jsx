@@ -1,8 +1,6 @@
 import {Link, Route} from 'react-router-dom';
 import React, {Component} from "react";
-import Home from "./home";
-import {Routes} from "react-router";
-import ProductDetails from "./productDetails";
+import bootstrap from 'bootstrap';
 
 
 class Products extends Component {

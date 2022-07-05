@@ -1,11 +1,14 @@
-import {Component} from "react";
-import {Link} from "react-router-dom";
+import useHistory from 'react-dom';
 
-const Home = (props) => {
+export default function Home(props) {
+    const history = useHistory();
+    const checkhistory = () => {
+        this.props.history.push('/samandar');
+    }
     return (
         <div>
+            <button onClick={this.checkhistory} className="btn-primary btn-sm">Subject</button>
             <h1>Hello and Welcome Home</h1>
         </div>
     )
 }
-export default Home;
